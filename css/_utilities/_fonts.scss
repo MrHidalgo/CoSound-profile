@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'AndaleMono';
+	src: local('Andale Mono'), local('AndaleMono'),
+	url('../fonts/AndaleMono.woff2') format('woff2'),
+	url('../fonts/AndaleMono.woff') format('woff'),
+	url('../fonts/AndaleMono.ttf') format('truetype'),
+	url('../fonts/AndaleMono.svg#AndaleMono') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AndaleMonoBold';
+	src: local('AndaleMonoMTStd-Bold'),
+	url('../fonts/AndaleMonoMTStd-Bold.woff2') format('woff2'),
+	url('../fonts/AndaleMonoMTStd-Bold.woff') format('woff'),
+	url('../fonts/AndaleMonoMTStd-Bold.ttf') format('truetype'),
+	url('../fonts/AndaleMonoMTStd-Bold.svg#AndaleMonoMTStd-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
