@@ -163,6 +163,9 @@ picture {
       @media screen and (max-width: 1439px) {
         .profile__bg-top {
           height: 300px; } }
+      @media screen and (max-width: 767px) {
+        .profile__bg-top {
+          display: none; } }
     .profile__bg-container {
       position: absolute;
       left: 0;
@@ -172,8 +175,8 @@ picture {
       height: 100%;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 15px;
-      padding-right: 15px; }
+      padding-left: 20px;
+      padding-right: 20px; }
       @media screen and (max-width: 767px) {
         .profile__bg-container {
           padding-left: 0;
@@ -188,16 +191,23 @@ picture {
     .profile__bg-visual {
       position: absolute;
       top: 127px;
+      left: 50px;
       right: 0;
       width: 100%;
-      max-width: 474px;
-      height: calc(100% - 127px); }
+      max-width: 464px;
+      height: calc(100% - 127px);
+      margin-left: auto;
+      margin-right: auto; }
       @media screen and (max-width: 1439px) {
         .profile__bg-visual {
           top: 100px;
           height: calc(100% - 100px); } }
+      @media screen and (max-width: 1365px) {
+        .profile__bg-visual {
+          left: 0; } }
       @media screen and (max-width: 767px) {
         .profile__bg-visual {
+          opacity: 0;
           top: 60px;
           height: calc(100% - 60px); } }
       .profile__bg-visual img {
@@ -217,12 +227,14 @@ picture {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 60px;
+    height: 73px;
     background-color: #191919; }
     @media screen and (max-width: 767px) {
       .profile__header {
         display: flex; } }
     .profile__header .profile__logo {
+      width: 100%;
+      max-width: 127px;
       padding-bottom: 0; }
   .profile__container {
     z-index: 2;
@@ -231,8 +243,8 @@ picture {
     max-width: 1605px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px; }
+    padding-left: 20px;
+    padding-right: 20px; }
   .profile__wrapper {
     display: flex;
     align-items: flex-start;
@@ -242,7 +254,7 @@ picture {
         padding-top: 100px; } }
     @media screen and (max-width: 767px) {
       .profile__wrapper {
-        padding-top: 60px; } }
+        padding-top: 73px; } }
     .profile__wrapper-left, .profile__wrapper-right {
       width: 50%; }
       @media screen and (max-width: 767px) {
@@ -254,19 +266,26 @@ picture {
       .profile__wrapper-left > div {
         width: 100%;
         max-width: 474px;
-        margin-left: auto; }
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 50px; }
+        @media screen and (max-width: 1365px) {
+          .profile__wrapper-left > div {
+            padding-left: 0; } }
     .profile__wrapper-right {
       position: sticky;
       align-self: flex-end;
       bottom: 50px;
-      padding-top: 250px;
-      padding-left: 50px; }
+      padding-top: 250px; }
       @media screen and (max-height: 1023px) {
         .profile__wrapper-right {
           padding-top: 200px; } }
       @media screen and (max-height: 899px) {
         .profile__wrapper-right {
           padding-top: 175px; } }
+      @media screen and (max-width: 1279px) {
+        .profile__wrapper-right {
+          padding-left: 20px; } }
       @media screen and (max-width: 1023px) {
         .profile__wrapper-right {
           padding-top: 150px; } }
@@ -276,7 +295,8 @@ picture {
       .profile__wrapper-right > div {
         width: 100%;
         max-width: 638px;
-        margin-left: auto; }
+        margin-left: auto;
+        margin-right: auto; }
   .profile__title {
     padding-bottom: 20px;
     font-family: 'AndaleMonoBold', sans-serif;
@@ -415,7 +435,7 @@ picture {
     .profile__card-content {
       z-index: 2;
       position: relative;
-      padding: 650px 70px 30px; }
+      padding: 650px 0 20px; }
       @media screen and (max-height: 1023px) {
         .profile__card-content {
           padding-top: 500px; } }
@@ -428,28 +448,33 @@ picture {
       @media screen and (max-height: 759px) {
         .profile__card-content {
           padding-top: 350px; } }
+      @media screen and (max-width: 1365px) {
+        .profile__card-content {
+          padding-left: 25px;
+          padding-right: 25px; } }
       @media screen and (max-width: 1023px) {
         .profile__card-content {
-          padding-top: 500px;
-          padding-left: 30px;
-          padding-right: 30px; } }
+          padding-left: 20px;
+          padding-right: 20px; } }
+      @media screen and (max-width: 1023px) {
+        .profile__card-content {
+          padding-top: 500px; } }
       @media screen and (max-width: 767px) {
         .profile__card-content {
           padding-top: 65vh;
           padding-left: 0;
-          padding-right: 0;
-          padding-bottom: 15px; } }
+          padding-right: 0; } }
     .profile__card-section {
       border-radius: 10px;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
       background-color: #000000; }
       .profile__card-section--main {
         position: relative;
-        padding: 87px 15px 30px; }
+        padding: 87px 15px 20px; }
       .profile__card-section--footer {
         display: none;
         padding: 25px;
-        margin-top: 30px; }
+        margin-top: 20px; }
         @media screen and (max-width: 767px) {
           .profile__card-section--footer {
             display: block; } }
@@ -459,7 +484,7 @@ picture {
       .profile__card-section:nth-last-of-type(2) {
         margin-bottom: 0 !important; }
       .profile__card-section:not(:last-of-type) {
-        margin-bottom: 30px; }
+        margin-bottom: 20px; }
     .profile__card-social {
       display: flex;
       align-items: center;

@@ -70,6 +70,9 @@
 			@include adaptive(1439) {
 				height: 300px;
 			}
+			@include adaptive(767) {
+				display: none;
+			}
 		}
 
 		&-container {
@@ -81,8 +84,8 @@
 			height: 100%;
 			margin-left: auto;
 			margin-right: auto;
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 20px;
+			padding-right: 20px;
 			@include adaptive(767) {
 				padding-left: 0;
 				padding-right: 0;
@@ -101,15 +104,22 @@
 		&-visual {
 			position: absolute;
 			top: 127px;
+			left: 50px;
 			right: 0;
 			width: 100%;
-			max-width: 474px;
+			max-width: 464px;
 			height: calc(100% - 127px);
+			margin-left: auto;
+			margin-right: auto;
 			@include adaptive(1439) {
 				top: 100px;
 				height: calc(100% - 100px);
 			}
+			@include adaptive(1365) {
+				left: 0;
+			}
 			@include adaptive(767) {
+				opacity: 0;
 				top: 60px;
 				height: calc(100% - 60px);
 			}
@@ -135,13 +145,15 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		height: 60px;
+		height: 73px;
 		background-color: #191919;
 		@include adaptive(767) {
 			display: flex;
 		}
 
 		.profile__logo {
+			width: 100%;
+			max-width: 127px;
 			padding-bottom: 0;
 		}
 	}
@@ -153,8 +165,8 @@
 		max-width: 1605px;
 		margin-left: auto;
 		margin-right: auto;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	&__wrapper {
@@ -165,7 +177,7 @@
 			padding-top: 100px;
 		}
 		@include adaptive(767) {
-			padding-top: 60px;
+			padding-top: 73px;
 		}
 
 		&-left,
@@ -184,6 +196,11 @@
 				width: 100%;
 				max-width: 474px;
 				margin-left: auto;
+				margin-right: auto;
+				padding-left: 50px;
+				@include adaptive(1365) {
+					padding-left: 0;
+				}
 			}
 		}
 
@@ -192,12 +209,15 @@
 			align-self: flex-end;
 			bottom: 50px;
 			padding-top: 250px;
-			padding-left: 50px;
+			//padding-left: 50px;
 			@include respondCustom('(max-height: 1023px)') {
 				padding-top: 200px;
 			}
 			@include respondCustom('(max-height: 899px)') {
 				padding-top: 175px;
+			}
+			@include adaptive(1279) {
+				padding-left: 20px;
 			}
 			@include adaptive(1023) {
 				padding-top: 150px;
@@ -210,6 +230,7 @@
 				width: 100%;
 				max-width: 638px;
 				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}
@@ -406,7 +427,7 @@
 		&-content {
 			z-index: 2;
 			position: relative;
-			padding: 650px 70px 30px;
+			padding: 650px 0 20px;
 			@include respondCustom('(max-height: 1023px)') {
 				padding-top: 500px;
 			}
@@ -419,16 +440,24 @@
 			@include respondCustom('(max-height: 759px)') {
 				padding-top: 350px;
 			}
+			@include adaptive(1365) {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			@include adaptive(1023) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
 			@include adaptive(1023) {
 				padding-top: 500px;
-				padding-left: 30px;
-				padding-right: 30px;
+				//padding-left: 30px;
+				//padding-right: 30px;
 			}
 			@include adaptive(767) {
 				padding-top: 65vh;
 				padding-left: 0;
 				padding-right: 0;
-				padding-bottom: 15px;
+				//padding-bottom: 20px;
 			}
 		}
 
@@ -439,13 +468,13 @@
 
 			&--main {
 				position: relative;
-				padding: 87px 15px 30px;
+				padding: 87px 15px 20px;
 			}
 
 			&--footer {
 				display: none;
 				padding: 25px;
-				margin-top: 30px;
+				margin-top: 20px;
 				@include adaptive(767) {
 					display: block;
 				}
@@ -461,7 +490,7 @@
 			}
 
 			&:not(:last-of-type) {
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 			}
 		}
 
