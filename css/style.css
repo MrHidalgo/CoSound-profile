@@ -108,24 +108,29 @@ picture {
   width: 100%;
   height: 100%; }
 
+body {
+  background-color: #761115; }
+
 .profile {
-  position: relative; }
-  .profile:before {
-    content: '';
-    z-index: 99;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 127px;
-    background-color: #000000; }
-    @media screen and (max-width: 1439px) {
-      .profile:before {
-        height: 100px; } }
-    @media screen and (max-width: 767px) {
-      .profile:before {
-        width: 100%;
-        height: 60px; } }
+  position: relative;
+  background-color: #761115;
+  /*&:before {
+  	content: '';
+  	z-index: 99;
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	width: 50%;
+  	height: 127px;
+  	background-color: #000000;
+  	@include adaptive(1439) {
+  		height: 100px;
+  	}
+  	@include adaptive(767) {
+  		width: 100%;
+  		height: 60px;
+  	}
+  }*/ }
   .profile.profile--404 {
     display: flex;
     align-items: center;
@@ -152,20 +157,33 @@ picture {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
-    .profile__bg-top {
+    height: 100%;
+    /*&-top {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 387px;
+    	background-color: #000000;
+    	@include adaptive(1439) {
+    		height: 300px;
+    	}
+    	@include adaptive(767) {
+    		display: none;
+    	}
+    }*/ }
+    .profile__bg-cover {
+      z-index: 0;
+      opacity: 0.3;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 387px;
-      background-color: #000000; }
-      @media screen and (max-width: 1439px) {
-        .profile__bg-top {
-          height: 300px; } }
-      @media screen and (max-width: 767px) {
-        .profile__bg-top {
-          display: none; } }
+      height: 100%;
+      background-image: url("../img/img-bg.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
     .profile__bg-container {
       position: absolute;
       left: 0;
@@ -190,14 +208,15 @@ picture {
             width: 100%; } }
     .profile__bg-visual {
       position: absolute;
-      top: 127px;
+      top: 0;
       left: 50px;
       right: 0;
       width: 100%;
       max-width: 464px;
-      height: calc(100% - 127px);
+      height: calc(100% - 115px);
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      transition: opacity 0.05s ease-in-out; }
       @media screen and (max-width: 1439px) {
         .profile__bg-visual {
           top: 100px;
@@ -236,6 +255,27 @@ picture {
       width: 100%;
       max-width: 127px;
       padding-bottom: 0; }
+  .profile__subheader {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 50px 0 0 50px; }
+    @media screen and (max-width: 1279px) {
+      .profile__subheader {
+        padding-left: 35px; } }
+    @media screen and (max-width: 1023px) {
+      .profile__subheader {
+        padding-left: 20px; } }
+    @media screen and (max-width: 767px) {
+      .profile__subheader {
+        display: none; } }
+    .profile__subheader img {
+      display: block;
+      max-width: 100%;
+      height: auto; }
   .profile__container {
     z-index: 2;
     position: relative;
@@ -248,13 +288,16 @@ picture {
   .profile__wrapper {
     display: flex;
     align-items: flex-start;
-    padding-top: 127px; }
-    @media screen and (max-width: 1439px) {
-      .profile__wrapper {
-        padding-top: 100px; } }
+    /*padding-top: 127px;
+    @include adaptive(1439) {
+    	padding-top: 100px;
+    }
+    @include adaptive(767) {
+    	padding-top: 73px;
+    }*/ }
     @media screen and (max-width: 767px) {
       .profile__wrapper {
-        padding-top: 73px; } }
+        flex-wrap: wrap; } }
     .profile__wrapper-left, .profile__wrapper-right {
       width: 50%; }
       @media screen and (max-width: 767px) {
@@ -265,7 +308,7 @@ picture {
       position: relative; }
       .profile__wrapper-left > div {
         width: 100%;
-        max-width: 474px;
+        max-width: 385px;
         margin-left: auto;
         margin-right: auto;
         padding-left: 50px; }
@@ -291,12 +334,54 @@ picture {
           padding-top: 150px; } }
       @media screen and (max-width: 767px) {
         .profile__wrapper-right {
-          display: none; } }
+          position: relative;
+          padding-top: 0;
+          padding-left: 0; } }
       .profile__wrapper-right > div {
         width: 100%;
         max-width: 638px;
         margin-left: auto;
         margin-right: auto; }
+      .profile__wrapper-right .profile__card-section {
+        overflow: hidden;
+        padding: 20px 15px; }
+        .profile__wrapper-right .profile__card-section .profile__card-media {
+          position: relative;
+          top: -20px;
+          left: -15px;
+          width: calc(100% + 30px); }
+          .profile__wrapper-right .profile__card-section .profile__card-media img {
+            display: block;
+            max-width: 100%;
+            height: auto; }
+        .profile__wrapper-right .profile__card-section .profile__card-tag {
+          padding-bottom: 0;
+          font-size: 14px;
+          line-height: 18px;
+          color: #535353; }
+        .profile__wrapper-right .profile__card-section > h2 {
+          font-size: 14px;
+          line-height: 17px;
+          color: #b9b9b9; }
+        .profile__wrapper-right .profile__card-section > p {
+          padding-bottom: 10px;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 15px;
+          color: #fff; }
+        .profile__wrapper-right .profile__card-section > span {
+          font-size: 13px;
+          line-height: 15px;
+          text-align: left;
+          color: #b9b9b9; }
+        .profile__wrapper-right .profile__card-section > a {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 15px; }
+          .profile__wrapper-right .profile__card-section > a img {
+            display: block;
+            max-width: 100%;
+            height: auto; }
   .profile__title {
     padding-bottom: 20px;
     font-family: 'AndaleMonoBold', sans-serif;
@@ -327,6 +412,9 @@ picture {
     display: flex;
     align-items: flex-start;
     padding-bottom: 17px; }
+    @media screen and (max-width: 767px) {
+      .profile__logo {
+        display: none; } }
     .profile__logo img {
       display: block;
       max-width: 100%;
@@ -337,11 +425,14 @@ picture {
     color: #fff; }
     @media screen and (max-width: 767px) {
       .profile__connect {
-        font-size: 16px; } }
+        display: none; } }
   .profile__btn {
     display: flex;
     align-items: center;
     padding-bottom: 40px; }
+    @media screen and (max-width: 767px) {
+      .profile__btn {
+        display: none; } }
     .profile__btn a {
       display: flex;
       align-items: flex-start; }
@@ -351,6 +442,9 @@ picture {
         display: block;
         max-width: 100%;
         height: auto; }
+  @media screen and (max-width: 767px) {
+    .profile__info {
+      display: none; } }
   .profile__info p {
     font-size: 10px;
     color: #6f6f6f; }
@@ -401,6 +495,12 @@ picture {
       text-align: center;
       letter-spacing: 0.02em;
       color: #fff; }
+      .profile__card-name img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto; }
     .profile__card-desc {
       padding-bottom: 12px;
       font-weight: bold;
@@ -413,7 +513,9 @@ picture {
       text-align: left;
       color: #b9b9b9; }
     .profile__card-location {
-      text-align: center; }
+      text-align: center;
+      font-size: 14px;
+      line-height: 17px; }
     .profile__card-tag {
       font-size: 11px;
       color: #535353; }
@@ -471,16 +573,42 @@ picture {
       .profile__card-section--main {
         position: relative;
         padding: 87px 15px 20px; }
+        .profile__card-section--main .profile__card-social {
+          justify-content: center;
+          padding-bottom: 20px; }
+          .profile__card-section--main .profile__card-social a {
+            margin-left: 17px;
+            margin-right: 17px; }
       .profile__card-section--footer {
         display: none;
         padding: 25px;
         margin-top: 20px; }
         @media screen and (max-width: 767px) {
           .profile__card-section--footer {
-            display: block; } }
-        .profile__card-section--footer .profile__connect {
-          font-family: "AndaleMonoBold", sans-serif;
-          font-weight: 700; }
+            display: block;
+            margin-top: 0; }
+            .profile__card-section--footer .profile__logo {
+              display: flex;
+              justify-content: center; }
+            .profile__card-section--footer .profile__connect {
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              max-width: 75%;
+              padding-bottom: 22px !important;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+              line-height: 19px; }
+            .profile__card-section--footer .profile__btn {
+              display: flex;
+              justify-content: center;
+              padding-bottom: 10px; }
+            .profile__card-section--footer .profile__link {
+              justify-content: center !important;
+              text-align: center; }
+            .profile__card-section--footer .profile__info {
+              display: block; } }
       .profile__card-section:nth-last-of-type(2) {
         margin-bottom: 0 !important; }
       .profile__card-section:not(:last-of-type) {
@@ -500,9 +628,9 @@ picture {
     .profile__card-link {
       display: flex;
       flex-direction: column;
-      padding-left: 15px;
-      padding-right: 15px;
-      padding-bottom: 15px; }
+      padding: 15px 0; }
+      .profile__card-link:last-of-type {
+        padding-bottom: 0; }
       .profile__card-link a {
         display: flex;
         align-items: flex-start;
@@ -512,8 +640,12 @@ picture {
         .profile__card-link a:not(:last-of-type) {
           margin-bottom: 10px; }
         .profile__card-link a span {
-          font-size: 13px;
+          font-size: 15px;
           color: #fff; }
+          .profile__card-link a span img {
+            display: block;
+            max-width: 100%;
+            height: auto; }
         .profile__card-link a i {
           display: flex;
           width: 10px;
@@ -521,6 +653,14 @@ picture {
           transform: rotate(45deg) translateY(6px);
           border-top: 1px solid #fff;
           border-right: 1px solid #fff; }
+    .profile__card-media {
+      position: relative; }
+      .profile__card-media img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto; }
   .profile__experience {
     padding: 35px 25px; }
     .profile__experience-title {

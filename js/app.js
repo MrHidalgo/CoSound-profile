@@ -1,5 +1,5 @@
 $(function(){
-	var DELTA = 2750;
+	var DELTA = 1000;
 	
 	function helperOpacityCalc() {
 		var $scrollPercent = ($(document).scrollTop() / DELTA);
@@ -12,10 +12,6 @@ $(function(){
 	helperOpacityCalc();
 	
 	$(window).on('resize scroll', function() {
-		if($(window).width() < 768) {
-			helperOpacityCalc();
-		} else {
-			$('.profile__bg-visual').css({opacity: 1});
-		}
+		helperOpacityCalc();
 	});
 });
