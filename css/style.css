@@ -213,14 +213,10 @@ body {
       right: 0;
       width: 100%;
       max-width: 464px;
-      height: calc(100% - 115px);
+      height: 100%;
       margin-left: auto;
       margin-right: auto;
       transition: opacity 0.05s ease-in-out; }
-      @media screen and (max-width: 1439px) {
-        .profile__bg-visual {
-          top: 100px;
-          height: calc(100% - 100px); } }
       @media screen and (max-width: 1365px) {
         .profile__bg-visual {
           left: 0; } }
@@ -255,6 +251,9 @@ body {
       width: 100%;
       max-width: 127px;
       padding-bottom: 0; }
+      @media screen and (max-width: 767px) {
+        .profile__header .profile__logo {
+          display: flex; } }
   .profile__subheader {
     z-index: 999;
     position: fixed;
@@ -335,6 +334,7 @@ body {
       @media screen and (max-width: 767px) {
         .profile__wrapper-right {
           position: relative;
+          bottom: 20px;
           padding-top: 0;
           padding-left: 0; } }
       .profile__wrapper-right > div {
@@ -374,11 +374,18 @@ body {
           line-height: 15px;
           text-align: left;
           color: #b9b9b9; }
-        .profile__wrapper-right .profile__card-section > a {
+        .profile__wrapper-right .profile__card-section > button {
+          cursor: pointer;
+          outline: none;
           display: flex;
           justify-content: flex-end;
-          margin-top: 15px; }
-          .profile__wrapper-right .profile__card-section > a img {
+          margin-top: 15px;
+          margin-left: auto;
+          box-shadow: none;
+          border: none;
+          border-radius: 0;
+          background-color: transparent; }
+          .profile__wrapper-right .profile__card-section > button img {
             display: block;
             max-width: 100%;
             height: auto; }
@@ -442,20 +449,20 @@ body {
         display: block;
         max-width: 100%;
         height: auto; }
-  @media screen and (max-width: 767px) {
-    .profile__info {
-      display: none; } }
-  .profile__info p {
-    font-size: 10px;
-    color: #6f6f6f; }
-    .profile__info p:not(:last-of-type) {
-      padding-bottom: 10px; }
-    .profile__info p a {
-      color: #6f6f6f;
-      transition: color 0.3s ease-in-out; }
-      .profile__info p a:hover {
-        color: #ffffff;
+  .profile__info {
+    opacity: 0; }
+    @media screen and (max-width: 767px) {
+      .profile__info {
+        display: none; } }
+    .profile__info p {
+      font-size: 10px; }
+      .profile__info p:not(:last-of-type) {
+        padding-bottom: 10px; }
+      .profile__info p a {
         transition: color 0.3s ease-in-out; }
+        .profile__info p a:hover {
+          color: #ffffff;
+          transition: color 0.3s ease-in-out; }
   .profile__link {
     display: flex;
     padding-bottom: 30px;
@@ -567,6 +574,8 @@ body {
           padding-left: 0;
           padding-right: 0; } }
     .profile__card-section {
+      display: block;
+      margin-bottom: 20px;
       border-radius: 10px;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
       background-color: #000000; }
@@ -609,10 +618,6 @@ body {
               text-align: center; }
             .profile__card-section--footer .profile__info {
               display: block; } }
-      .profile__card-section:nth-last-of-type(2) {
-        margin-bottom: 0 !important; }
-      .profile__card-section:not(:last-of-type) {
-        margin-bottom: 20px; }
     .profile__card-social {
       display: flex;
       align-items: center;
@@ -635,10 +640,10 @@ body {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        min-height: 31px;
+        min-height: 28px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
         .profile__card-link a:not(:last-of-type) {
-          margin-bottom: 10px; }
+          margin-bottom: 8px; }
         .profile__card-link a span {
           font-size: 15px;
           color: #fff; }

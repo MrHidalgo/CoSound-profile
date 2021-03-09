@@ -127,13 +127,13 @@ body {
 			right: 0;
 			width: 100%;
 			max-width: 464px;
-			height: calc(100% - 115px);
+			height: 100%;
 			margin-left: auto;
 			margin-right: auto;
 			@include transition(opacity 0.05s);
 			@include adaptive(1439) {
-				top: 100px;
-				height: calc(100% - 100px);
+				//top: 100%;
+				//height: calc(100% - 100px);
 			}
 			@include adaptive(1365) {
 				left: 0;
@@ -175,6 +175,9 @@ body {
 			width: 100%;
 			max-width: 127px;
 			padding-bottom: 0;
+			@include adaptive(767) {
+				display: flex;
+			}
 		}
 	}
 
@@ -272,6 +275,7 @@ body {
 			}
 			@include adaptive(767) {
 				position: relative;
+				bottom: 20px;
 				padding-top: 0;
 				padding-left: 0;
 			}
@@ -328,10 +332,17 @@ body {
 					color: #b9b9b9;
 				}
 
-				> a {
+				> button {
+					cursor: pointer;
+					outline: none;
 					display: flex;
 					justify-content: flex-end;
 					margin-top: 15px;
+					margin-left: auto;
+					box-shadow: none;
+					border: none;
+					border-radius: 0;
+					background-color: transparent;
 
 					img {
 						display: block;
@@ -426,20 +437,21 @@ body {
 	}
 
 	&__info {
+		opacity: 0;
 		@include adaptive(767) {
 			display: none;
 		}
 
 		p {
 			font-size: 10px;
-			color: #6f6f6f;
+			//color: #6f6f6f;
 
 			&:not(:last-of-type) {
 				padding-bottom: 10px;
 			}
 
 			a {
-				color: #6f6f6f;
+				//color: #6f6f6f;
 				@include transition(color);
 
 				&:hover {
@@ -590,6 +602,8 @@ body {
 		}
 
 		&-section {
+			display: block;
+			margin-bottom: 20px;
 			border-radius: 10px;
 			box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
 			background-color: #000000;
@@ -646,14 +660,6 @@ body {
 					}
 				}
 			}
-
-			&:nth-last-of-type(2) {
-				margin-bottom: 0 !important;
-			}
-
-			&:not(:last-of-type) {
-				margin-bottom: 20px;
-			}
 		}
 
 		&-social {
@@ -687,11 +693,11 @@ body {
 				display: flex;
 				align-items: flex-start;
 				justify-content: space-between;
-				min-height: 31px;
+				min-height: 28px;
 				border-bottom: 1px solid rgba(#fff, 0.15);
 
 				&:not(:last-of-type) {
-					margin-bottom: 10px;
+					margin-bottom: 8px;
 				}
 
 				span {
