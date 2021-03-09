@@ -643,7 +643,7 @@ body {
         min-height: 28px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
         .profile__card-link a:not(:last-of-type) {
-          margin-bottom: 8px; }
+          margin-bottom: 18px; }
         .profile__card-link a span {
           font-size: 15px;
           color: #fff; }
